@@ -9,6 +9,12 @@ body {
   position: relative;
   font-family: Hind Madurai, sans-serif; }
 
+#fileUploader {
+  display: none; }
+
+.display-none {
+  display: none !important; }
+
 .side-bar-cover {
   position: fixed;
   width: 100%;
