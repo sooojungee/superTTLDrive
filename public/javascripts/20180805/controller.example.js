@@ -5,8 +5,12 @@ const UIController = new function () {
   const $progress = $('.progress');
   const $drop = $('.upload-condition-zone');
   const $cardPart = $('.card-part');
-  
+  const $search = $('#search');
   const $inputZone = $('#fileUploader');
+  const $category = $('.category-card-outer');
+  const $reset = $('.menu-theme');
+  const $leftBar = $('.left-side-bar');
+  
   $inputZone.on('change', (e) => {
     console.log(e.target.files);
     FirebaseApi.uploadFileData(e.target.files);
@@ -25,6 +29,50 @@ const UIController = new function () {
   $signIn.on('click', FirebaseApi.signIn);
   $signOut.on('click', FirebaseApi.signOut);
   
+  $category.on('click', function () {
+    const $this = $(this);
+    const type = $this.find('.name').text().toLowerCase();
+    
+    const list = $cardPart.find('.card-cover-cell');
+    
+    console.log(type);
+    for (let i = 0; i < list.length; i++) {
+      
+      // console.log($(list[i]).find(`.${type}`));
+      if ($(list[i]).find('.type-icon').hasClass(`${type}`)) {
+        $(list[i]).css('display', 'block');
+      }
+      else {
+        $(list[i]).css('display', 'none');
+      }
+    }
+    
+  });
+  
+  $reset.on('click', function () {
+    const list = $cardPart.find('.card-cover-cell');
+    $(list).css('display', 'block');
+  });
+  
+  
+  $search.on('keyup', () => {
+    
+    const val = $search.val();
+    const list = $cardPart.find('.card-cover-cell');
+    
+    for (let i = 0; i < list.length; i++) {
+      
+      if ($(list[i]).find('.text.bold').text().indexOf(val) < 0) {
+        $(list[i]).css('display', 'none');
+      }
+      else {
+        $(list[i]).css('display', 'block');
+      }
+    }
+    
+  });
+  
+  
   FirebaseApi.setOnAuthStateChanged(async (u) => {
     if (!_.isNil(u)) {
       $signIn.css('display', 'none');
@@ -40,7 +88,7 @@ const UIController = new function () {
     $('.profile-photo-grid').css('background-image', `url(${u.photoURL})`);
     
     setUsers(await FirebaseDB.getUsers());
-    FirebaseApi.readFileData();
+    await FirebaseApi.readFileData();
     
     
   });
@@ -61,8 +109,58 @@ const UIController = new function () {
       $ele.find('.travellers-name-div').text(users[i].displayName);
       $ele.find('.travellers-photo').css('background', `url(${users[i].photoURL})`);
       $travellerRoot.append($ele);
+      
+      $ele.on('click', async function () {
+        $cardPart.empty();
+        const files = await FirebaseDB.readFile(users[i].uid);
+        addCards(files);
+        updateProfile(users[i], fileJSON(files));
+      })
+    }
+  }
+  
+  function fileJSON(files){
+    const data = {};
+    
+    for(let i = 0; i < files.length; i++) {
+      let file = files[i];
+      
+      let category = file.type.split("/")[0];
+      if(category === "") category = "etc";
+      
+      if(!data.hasOwnProperty(category)){
+        data[category] = {
+          category: category,
+          size: 0,
+          number: 0
+        }
+      }
+      data[category].size += file.size;
+      data[category].number++;
     }
     
+    console.log("데이터를찍어라");
+    console.log(data);
+    
+    return data;
+  }
+  
+  function updateProfile(user, json){
+    console.log(user, json);
+    
+    $leftBar.find('.left-name').text(user.displayName);
+    $leftBar.find('.left-email').text(user.email);
+    $leftBar.find('.left-photo').css('background-image', `url(${user.photoURL})`);
+    console.log('for 전');
+    for(let i = 0 ; i < Object.keys(json).length ; i++){
+      let key = Object.keys(json)[i];
+      console.log(json[key]);
+      let category = json[key].category;
+      console.log(category);
+      console.log($leftBar.find(`#category-${category}`));
+      $leftBar.find(`#category-${category}`)
+        .text(`${category.toUpperCase()}${(json[key].size / 1.25e+9).toFixed(3)}`);
+    }
   }
   
   FirebaseApi.setOnProgressListener((o) => {
@@ -85,6 +183,7 @@ const UIController = new function () {
   FirebaseApi.setOnUpdateCardListener(addCards);
   
   function addCards(files) {
+    
     if (_.isNil(files.length)) {
       addCard(files);
     }
@@ -122,7 +221,7 @@ const UIController = new function () {
     $ele.find('.text.desc').text(file.size);
     $ele.attr('id', file.uploadDate);
     
-    if(auth.currentUser.uid === file.uid){
+    if (auth.currentUser.uid === file.uid) {
       const deleteButton = `<div class="i material-icons delete">delete</div>`;
       $ele.find('.sights-card-cell').append(deleteButton);
     }
@@ -136,37 +235,37 @@ const UIController = new function () {
       
       switch (type) {
         case 'image':
-          $ele.find('.type-icon').addClass('i fas fa-image');
+          $ele.find('.type-icon').addClass('i fas fa-image image');
           break;
         
         case 'audio':
-          $ele.find('.type-icon').addClass('i fas fa-music');
+          $ele.find('.type-icon').addClass('i fas fa-music audio');
           
           break;
         case 'application':
-          $ele.find('.type-icon').addClass('i fas fa-code');
+          $ele.find('.type-icon').addClass('i fas fa-code application');
           
           break;
         case 'video':
-          $ele.find('.type-icon').addClass('i fas fa-video');
+          $ele.find('.type-icon').addClass('i fas fa-video video');
           
           break;
         case 'text':
-          $ele.find('.type-icon').addClass('i fas fa-font');
+          $ele.find('.type-icon').addClass('i fas fa-font text');
           
           break;
         default :
-          $ele.find('.type-icon').addClass('i fas fa-file');
+          $ele.find('.type-icon').addClass('i fas fa-file etc');
           break;
       }
     } else {
-      $ele.find('.type-icon').addClass('i fas fa-file');
+      $ele.find('.type-icon').addClass('i fas fa-file etc');
       
     }
     
     $cardPart.append($ele);
     
-    $ele.on('click', '.delete',function(){
+    $ele.on('click', '.delete', function () {
       console.log('hi', file.uploadDate);
       FirebaseDB.deleteFile(file.uploadDate);
       FirebaseApi.deleteFileData(file.name);

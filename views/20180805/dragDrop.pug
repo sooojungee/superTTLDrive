@@ -20,10 +20,10 @@ html
       .left-side-bar
         //.color-change-button
         .profile-field.flex.align-center
-          .profile-photo.profile-photo-grid
+          .profile-photo.left-photo
           .name-email-cover.flex-1
-            .nick-name.name-nick Juwon Hong
-            .email.e-mail juwonhp373@gmail.com
+            .nick-name.left-name Juwon Hong
+            .email.left-email juwonhp373@gmail.com
         .scroll-cover
           .menu-theme.flex.flex-1 저장공간 관리
           .storage-grid
@@ -38,22 +38,22 @@ html
             .storage-description-part
               .category
                 .box.type-image
-                .text IMAGE <i>5%</i>
+                .text#category-image IMAGE
               .category
                 .box.type-text
-                .text TEXT <i>20%</i>
+                .text#category-text TEXT
               .category
                 .box.type-code
-                .text CODE <i>2%</i>
+                .text#category-code CODE
               .category
                 .box.type-video
-                .text VIDEO <i>8%</i>
+                .text#category-video VIDEO
               .category
                 .box.type-sound
-                .text SOUND <i>10%</i>
+                .text#category-sound SOUND
               .category
                 .box.type-etc
-                .text ETC <i>16%</i>
+                .text#category-etc ETC
           .line
           .menu-theme.flex.flex-1 카테고리
           .category-card-grid
@@ -62,8 +62,8 @@ html
                 .text-group
                   .name IMAGE
                   .desc-group
-                    .count 300
-                    .capacity / 38.35GB
+                    .count 0
+                    .capacity / 0GB
                 .icon-group
                   .i.fas.fa-image.type-image-color
             .category-card-outer
@@ -71,8 +71,8 @@ html
                 .text-group
                   .name TEXT
                   .desc-group
-                    .count 300
-                    .capacity / 38.35GB
+                    .count 0
+                    .capacity / 0GB
                 .icon-group
                   .i.fas.fa-font.type-text-color
             .category-card-outer
@@ -80,8 +80,8 @@ html
                 .text-group
                   .name CODE
                   .desc-group
-                    .count 300
-                    .capacity / 38.35GB
+                    .count 0
+                    .capacity / 0GB
                 .icon-group
                   .i.fas.fa-code.type-code-color
             .category-card-outer
@@ -89,8 +89,8 @@ html
                 .text-group
                   .name VIDEO
                   .desc-group
-                    .count 300
-                    .capacity / 38.35GB
+                    .count 0
+                    .capacity / 0GB
                 .icon-group
                   .i.fas.fa-video.type-video-color
             .category-card-outer
@@ -98,8 +98,8 @@ html
                 .text-group
                   .name SOUND
                   .desc-group
-                    .count 300
-                    .capacity / 38.35GB
+                    .count 0
+                    .capacity / 0GB
                 .icon-group
                   .i.fas.fa-music.type-sound-color
             .category-card-outer
@@ -107,8 +107,8 @@ html
                 .text-group
                   .name ETC
                   .desc-group
-                    .count 300
-                    .capacity / 38.35GB
+                    .count 0
+                    .capacity / 0GB
                 .icon-group
                   .i.fas.fa-file.type-etc-color
 
@@ -120,7 +120,7 @@ html
       .input-field.flex.align-center(type='nav')
         .icon-grid.flex.align-center
           i.fas.fa-search
-        input(placeholder='SEARCH')
+        input#search(placeholder='SEARCH')
       .flex-1
       .nav-profile-field.flex.align-center
         .nick-mail-cover
