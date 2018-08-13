@@ -1,0 +1,326 @@
+*
+  box-sizing: border-box
+  //border: 1px solid lightgray
+
+html
+  display: flex
+  background: white
+  overflow: hidden
+body
+  width: 950px
+  height: 710px
+  margin: auto
+  background: gray
+  position: relative
+  box-shadow: 0 0 20px 10px gray
+
+//.window
+//  width: 950px
+//  height: 710px
+//  margin: auto
+//  background: black
+
+.pin-it-button
+  position: absolute
+  left: 20px
+  top: 20px
+  z-index: 1000
+  width: 65px
+  height: 30px
+  border: 2px solid #D9CB9E
+  border-radius: 5px
+  font-size: 20px
+  background: snow
+  color: crimson
+
+$nav-field-height: 80px
+$logo-grid-width: 230px
+.nav-field
+  height: $nav-field-height
+  font-size: 20px
+  font-weight: bold
+  .logo-grid
+    width: $logo-grid-width
+    line-height: 80px
+    padding: 0 20px // padding: 20px주고 line-height: 80px 주면 밀려서 나옴 위아래 padding 없애줘야함.
+    background: white
+    color: #D9CB9E
+    text-align: center
+  .subject-search-grid
+    padding: 20px
+    background: #D9CB9E
+    color: white
+    .subject-cell
+    .search-cell
+      padding: 3px
+      margin: 20px
+      color: white
+      border: 2px solid white
+      border-radius: 2px
+      font-size: 15px
+      i
+        font-size: 13px
+        margin: 0 5px
+      input
+        padding: 0
+        background: none
+        height: 20px
+        width: 130px
+        color: white
+        outline: none
+        border: none
+        &::placeholder
+          font-size: 10px
+          color: white
+    .menu-icon-cell
+      i
+        font-size: 25px
+
+.overall-card-zone
+  width: 100%
+  height: calc(100% - #{$nav-field-height})
+
+$people-grid-height: 230px
+.people-field
+  display: inline-block
+  flex-wrap: wrap
+  width: $logo-grid-width
+  height: 630px
+  overflow: auto
+  &::-webkit-scrollbar
+    width: 0
+  .people-grid
+    height: $people-grid-height
+    width: 100%
+    background: #3B4544
+    padding: 20px
+    color: #CDC9AE
+
+    &.anton
+      background: #2B2D2C
+    &.jan
+      background: #1F1F21
+
+    .photo-cell
+      width: 100%
+      margin: 8px 0
+      .photo
+        width: 80px
+        height: 80px
+        border-radius: 50%
+        background: url("/images/greg.jpg")
+        background-size: 130px
+        background-position: center
+        &.anton
+          background: url("/images/anton.jpg")
+          background-size: 100px
+          background-position: 90px
+        &.jan
+          background: url("/images/jan.jpg")
+          background-size: 200px
+          background-position: 145px 120px
+    .name-cell
+      font-size: 20px
+      font-weight: bold
+      text-align: center
+    .explanation-cell
+      margin: 5px
+      text-align: center
+      font-size: 10px
+    .division-line
+      width: 45px
+      border: .5px solid #CDC9AE
+      margin: 15px auto
+
+.icons
+  text-align: center
+  i
+    font-size: 10px
+    margin: 0 5px
+    cursor: pointer
+
+
+.card-grid-field
+  display: inline-block
+  overflow: auto
+  width: 720px
+  height: 100%
+  &::-webkit-scrollbar
+    width: 0
+  .three-card-grid
+    width: 100%
+    height: $people-grid-height * 2
+    .two-card-grid
+      width: calc(100% - #{$logo-grid-width})
+      height: 100%
+      display: inline-block
+
+.widest-card-cell
+  width: 100%
+  height: $people-grid-height
+  position: relative
+  overflow: hidden
+  &:hover
+    .background-cell
+      transform: scale(1.05)
+    .cover-cell
+      .music-cell
+        .button
+          color: #DEA447
+          border: 1px solid #DEA447
+
+.slim-card-cell
+  width: $logo-grid-width
+  height: $people-grid-height * 2
+  display: inline-block
+  position: relative
+  color: black
+  overflow: hidden
+  .content-cell
+    position: absolute
+    bottom: 0
+    padding: 20px
+    width: 100%
+    height: 160px
+    background: white
+
+.wide-card-cell
+  width: 100%
+  height: $people-grid-height
+  position: relative
+  overflow: hidden
+  .content-cell
+    width: 160px
+    height: $people-grid-height
+    padding: 20px
+    background: #D9352A
+    color: white
+    position: absolute
+    text-align: center
+    top : 0
+    right: 0
+  &:hover
+    .background-cell
+      transform: scale(1.05)
+    .cover-cell
+      .button
+        color: #DEA447
+        border: 1px solid #DEA447
+
+.triangle-cell
+  position: absolute
+  top: 0
+  width: 100px
+  height: 100px
+  background: #D9352A
+  transform: translate(340px, $people-grid-height / 2 - 50px) rotate(45deg)
+  transform-origin: 50% 50%
+  &.bottom-side-div
+    background: goldenrod
+    top: 0
+
+
+
+.background-cell
+  width: 100%
+  height: 100%
+  transition: transform .3s
+  background-size: cover !important
+  background-position: center !important
+  &.wide-card-cell
+    background: url("/images/goldenfield.jpg")
+    &.bottom
+      background: url("/images/autumngorge.JPG")
+  &.slim-card-cell
+    background: url("/images/highroad.jpg")
+  &.widest-card-cell
+    background: url("/images/djrashad.jpg")
+  &:hover
+    transform: scale(1.05)
+
+.cover-cell
+  position: absolute
+  width: 100%
+  height: 100%
+  background: rgba(10, 10, 10, 0.5)
+  color: white
+  z-index: 100
+  top: 0
+  pointer-events: none
+  &.widest-card-cell
+    flex-wrap: unset
+
+.music-cell
+  width: 100%
+  height: 100px
+  position: relative
+  .soundwave
+    position: absolute
+    right: 20px
+    top: 10px
+    width: 620px
+    height: 80px
+    background: url("/images/soundwave.png")
+    background-size: 620px 80px
+    background-position: center
+
+// pinit, play, pause ...button
+.button
+  position: absolute
+  bottom: 25px
+  width: 30px
+  height: 30px
+  margin: auto
+  border: 1px solid white
+  transition: all .2s
+  cursor: pointer
+  pointer-events: visible
+  &.pause
+    bottom: calc(50% - 15px)
+    left: 30px
+  &:hover
+    color: #DEA447
+    border: 1px solid #DEA447
+  i
+    font-size: 10px
+//#8A3028
+
+.title
+  width: 120px
+  padding: 8px
+  font-size: 13px
+  border-top: 1px solid white
+  border-bottom: 1px solid white
+  text-align: center
+  margin: auto
+  &.right-side-div
+    margin: 20px 0
+  &.bottom-side-div
+    border-top: 1px solid black
+    border-bottom: 1px solid black
+    margin: auto
+  &.whole-side-div
+    width: fit-content
+    height: fit-content // 이거 안하면 엄청 커짐
+    margin: 20px auto
+
+.text
+  text-align: left
+  margin: 30px 0
+  font-size: 10px
+  &.bottom-side-div
+    margin: 20px 0
+    word-break: keep-all
+
+.flex
+  display: flex
+
+.flex-1
+  flex: 1
+
+.align-center
+  align-items: center
+  justify-content: center
+
+.side-align-center
+  justify-content: center

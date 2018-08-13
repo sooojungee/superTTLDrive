@@ -1,0 +1,421 @@
+@import url('https://fonts.googleapis.com/css?family=Hind+Madurai:400,500,700|Roboto:400,500,700')
+
+*
+  box-sizing: border-box
+
+body
+  margin: 0
+  padding: 0
+  display: flex
+  overflow: hidden
+  position: relative
+  font-family: Roboto, sans-serif
+
+.toast-area
+  position: fixed
+  bottom: 0
+  left: 0
+  width: 500px
+  z-index: 1000
+  padding: 0 0 10px 10px
+//background: white
+.toast
+  width: 300px
+  min-height: 48px
+  height: auto
+  margin-top: 10px
+  padding: 10px 10px 10px 0
+  border-radius: 5px 30px 30px 5px
+  color: rgba(255, 255, 255, 0.8)
+  transition: color .3s
+  border-left: 8px solid rgba(255, 255, 255, 1)
+  box-shadow: 0 3px 5px 2px rgba(0, 0, 0, .5)
+  &:hover
+    color: rgba(255, 255, 255, 1)
+  &.error
+    background: rgb(219, 51, 34)
+    border-left: 8px solid rgb(255, 66, 56)
+  &.success
+    background: rgba(39, 174, 96, 1)
+    border-left: 8px solid rgb(48, 201, 108)
+  &.notice
+    background: rgb(22, 130, 219)
+    border-left: 8px solid rgb(25, 151, 255)
+  .icon-cell
+    height: 100%
+    width: 48px
+    font-size: 25px
+  .message-cover
+    height: fit-content
+    .message-cell
+      height: 100%
+      //margin: 0 14px
+      font-size: 12px
+      &.title
+        font-size: 16px
+        //padding-bottom: 10px
+        line-height: 30px
+  //font-weight: bold
+
+  .delete-cell
+    cursor: pointer
+    margin: 0 8px
+
+.left-menu-zone
+  width: 65px
+  height: 100vh
+  //1965px
+  background: #4A392B
+  transition: width .3s
+  overflow: auto
+  &:hover
+    width: 200px
+
+.main-body-zone
+  //height: 100%
+  background: white
+  overflow: auto
+
+.nav-field
+  height: 50px
+  .button-grid
+    width: 50px
+    height: 50px
+    cursor: pointer
+    position: relative
+    i
+      font-size: 13px
+    .new-alarm
+      position: absolute
+      top: 0
+      right: 0
+      width: 14px
+      height: 14px
+      background: #E67E22
+      color: white
+      font-size: 12px
+      font-weight: bold
+    &:hover
+      background: #D9CB9E
+  .input-grid
+    color: gray
+    padding-left: 10px
+    input
+      height: 30px
+      font-size: 20px
+      border: none
+      outline: none
+      &::placeholder
+        font-size: 15px
+  .profile-photo-grid
+    cursor: pointer
+    padding: 3px
+    .profile-photo-part
+      width: 38px
+      height: 38px
+      border-radius: 50%
+      margin-left: 4px
+      border: 1px solid white
+      background: url("/images/karan.jpg")
+      background-size: cover
+      background-position: center
+    i
+      font-size: 17px
+    &:hover
+      background: #D9CB9E
+
+.welcome-field
+  height: 245px
+  background: goldenrod
+  overflow: hidden
+  .photo-grid
+    height: 100%
+    background: url("/images/petersburg.jpg")
+    background-position: center
+    background-size: cover
+    .current-status-part
+      height: 125px
+      background: rgba(0, 0, 0, 0.5)
+      color: white
+      .greeting-cell
+        height: 100%
+        flex-flow: column
+        justify-content: center
+        margin-left: 20px
+        .welcome-div
+          font-size: 28px
+          margin-bottom: 8px
+        .ment-div
+          font-size: 17px
+          color: rgba(255, 255, 255, 0.8)
+      .information-cell
+        width: 140px
+        flex-flow: column
+        .numbers-div
+          font-size: 26px
+          font-weight: bold
+          margin-bottom: 8px
+        .theme-div
+          color: rgba(255, 255, 255, 0.8)
+          font-size: 18px
+          i
+            margin: 3px
+
+.card-grid-field
+  height: fit-content
+  background: #F2EEEB
+  height: 600px
+  .card-top-grid
+    height: fit-content
+    padding: 22px 5px 0
+    flex-wrap: wrap
+    .smallest-card-cover
+      width: 25%
+      padding: 0 15px 20px
+      &.middle
+        width: 50%
+      .smallest-card-part
+        height: 94px
+        background: white
+        padding: 15px
+        .theme-image-cell
+          width: 63px
+          height: 63px
+          border-radius: 50%
+          background: #E67E23
+          i
+            color: white
+            font-size: 30px
+          &.second
+            background: #27AE60
+          &.third
+            background: #E74C3C
+          &.fourth
+            background: #B066CD
+        .title-explanation-cell
+          text-align: right
+          padding-left: 15px
+          &.middle
+            text-align: left
+          .title
+            font-size: 18px
+            color: #E67E23
+            margin-bottom: 3px
+          .expalnation
+            color: gray
+            font-size: 13px
+
+  .card-bottom-grid
+    height: fit-content
+    flex-wrap: wrap
+    background: #F2EEEB
+    padding: 0 5px 0
+    .half-divide-part
+      width: 50%
+      height: fit-content
+      .brown-card-cover
+        padding: 0 15px 20px
+        height: fit-content
+        .brown-card-cell
+          height: fit-content
+          .brown-nav-bar
+            height: 63px
+            background: #4A392B
+            position: relative
+            align-items: baseline
+            .latest-news
+              color: white
+              font-size: 23px
+              padding: 20px 5px 0 15px
+            .button
+              color: #B86A25
+              font-weight: bold
+            .write-setting-button-div
+              position: absolute
+              top: 5px
+              right: 5px
+              background: rgba(255, 255, 255, 0.5)
+              width: 44px
+              height: 23px
+              border-radius: 3px
+              padding-top: 8px
+              i
+                width: 50%
+                height: 100%
+                font-size: 10px
+                color: rgba(74, 57, 43, 0.8)
+                text-align: center
+                &.fas.fa-pencil-alt
+                  border-right: 1px solid rgba(255, 255, 255, 0.5)
+
+.sales-earnings-cover
+  background: white
+  height: fit-content
+  margin: 0 15px 20px
+  .graph-image-cell
+    position: relative
+    background: #D9352A
+    width: 100%
+    height: 390px
+      background-position: center !important
+      background-size: cover !important
+    &.weather-station
+      height: 150px
+      background: url("/images/header.jpg")
+    .title-div
+      width: 100%
+      color: white
+      position: absolute
+      top: 0
+      left: 0
+      padding: 33px 15px
+      &.weather-station
+        background: rgba(0, 0, 0, 0.5)
+        height: 94px
+        padding: 10px 15px
+      .title
+        font-size: 16px
+        margin-bottom: 2px
+        &.big
+          font-size: 24px
+        i
+          font-size: 12px
+          margin-right: 3px
+    .weather-icon
+      width: 64px
+      height: 100%
+      font-size: 28px
+      i
+        transition: all .8s
+      &:hover
+        i
+          transform: scale(1.2) rotate(360deg)
+  .bottom-cover
+    width: 100%
+    height: 117px
+
+.content-zone
+  background: white
+  height: fit-content
+  padding: 0 15px
+  &.right
+    padding: 15px 0
+  .content-field-cover
+    width: 100%
+    height: fit-content
+    .content-field
+      height: 100%
+      padding: 18px 0
+      &.left
+        align-items: right
+        width: 95px
+        position: relative
+      &.flex-1
+        padding: 18px 0 18px 25px
+        border-left: 1px solid royalblue
+      .time-notification-grid
+        color: #4A392B
+        font-size: 12px
+        padding-right: 22px
+        width: 100%
+        height: fit-content
+        text-align: right
+      .theme-image-grid
+        width: 30px
+        height: 30px
+        border-radius: 50%
+        background: #B86A25
+        position: absolute
+        right: -15px
+        top: 12px
+        z-index: 100
+        i
+          color: white
+          font-size: 15px
+      .report-grid
+        font-size: 13px
+        .title-part
+          color: #B86A25
+          cursor: pointer
+          font-weight: bold
+          margin-bottom: 12px
+        .portion-part
+          line-height: 18.5px
+          margin-bottom: 14px
+          &.only
+            margin: 0
+          &.line-height-larger
+            line-height: 20.8px
+        .article-button
+          padding: 1px 3px
+          border-radius: 3px
+          border: 1px solid #B86A25
+          background: #E58E5D
+          cursor: pointer
+          color: white
+          width: fit-content
+          margin-bottom: 13px
+          i
+            margin-right: 2px
+          &.view-more
+            margin-left: 90px
+            color: gray
+            border: 1px solid lightgray
+            background: #F2EEEB
+
+        .photo-part
+          height: fit-content
+          .photo-cell
+            height: 70px
+            width: 105px
+            background: url("/images/goldenfield.jpg")
+            background-size: cover !important
+            background-position: center !important
+            cursor: zoom-in
+            margin: 0 15px 8px 0
+            &.second
+              background: url("/images/highroad.jpg")
+              margin: 0 15px
+            &.third
+              background: url("/images/earthmoon.jpg")
+            &.map
+              margin: 0
+              width: 100%
+              height: 220px
+              background: #9fa8da
+              cursor: grab
+
+.number-card-cover
+  font-size: 16px
+  color: gray
+  height: 88px
+  width: 25%
+  flex-flow: column
+  &.three-div
+    width: calc(100% / 3)
+  .number-field
+    .number-grid
+      display: inline-block
+      &.bold
+        color: #4A392B
+        font-size: 25px
+        font-weight: bold
+        margin-right: 5px
+      &.big
+        font-size: 25px
+  .theme-field
+    i
+      margin: 0 3px
+
+.flex
+  display: flex
+
+.flex-1
+  flex: 1
+
+.align-center
+  justify-content: center
+  align-items: center
+
+.height-align-center
+  align-items: center

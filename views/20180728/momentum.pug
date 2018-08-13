@@ -1,0 +1,43 @@
+html
+	head
+		meta(name='viewport', content="width=device-width, user-scalable=no")
+		link(rel='stylesheet', href='/stylesheets/20180728/momentum.css')
+		link(link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css"
+		integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous")
+		script(src="https://code.jquery.com/jquery-3.3.1.js",
+		integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=",
+		crossorigin="anonymous")
+	body
+		.cover-zone
+		.top-bottom-zone.flex
+			.links-field.flex.flex-1
+				.links-grid Links
+			.weather-region-field
+				.weather-grid.flex.align-center
+					i.fas.fa-tint
+					.celsius-cell 33
+					.degree-cell °
+				.region-grid.flex YONGIN
+
+		.middle-zone.flex
+			.time-greeting-field.flex.align-center
+				div
+					.time-grid 10:30
+					.greeting-grid Good evening, Juwon.H.
+			.to-do-field.flex.align-center
+				div
+					.today-grid TODAY
+					.to-do-grid.flex.align-center
+						.check-box-cell.flex.align-center
+							i.fas.fa-check
+						.to-do-cell.flex-1 bully & pinch hyunwoo.H
+						.delete-cell.flex.align-center
+							i.fas.fa-times
+		.top-bottom-zone.flex.height-align-center
+			.div.flex
+				i.fas.fa-cog
+				.background-info-field Cappadocia, Turkey
+			.quote-body-field "Lead with your strength, not your weaknesses."
+			.todo-button-field Todo
+
+	script(src='/javascripts/20180728/momentum.js')

@@ -1,0 +1,305 @@
+* {
+  box-sizing: border-box; }
+
+html {
+  display: flex;
+  background: white;
+  overflow: hidden; }
+
+body {
+  width: 950px;
+  height: 710px;
+  margin: auto;
+  background: gray;
+  position: relative;
+  box-shadow: 0 0 20px 10px gray; }
+
+.pin-it-button {
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  z-index: 1000;
+  width: 65px;
+  height: 30px;
+  border: 2px solid #D9CB9E;
+  border-radius: 5px;
+  font-size: 20px;
+  background: snow;
+  color: crimson; }
+
+.nav-field {
+  height: 80px;
+  font-size: 20px;
+  font-weight: bold; }
+  .nav-field .logo-grid {
+    width: 230px;
+    line-height: 80px;
+    padding: 0 20px;
+    background: white;
+    color: #D9CB9E;
+    text-align: center; }
+  .nav-field .subject-search-grid {
+    padding: 20px;
+    background: #D9CB9E;
+    color: white; }
+    .nav-field .subject-search-grid .search-cell {
+      padding: 3px;
+      margin: 20px;
+      color: white;
+      border: 2px solid white;
+      border-radius: 2px;
+      font-size: 15px; }
+      .nav-field .subject-search-grid .search-cell i {
+        font-size: 13px;
+        margin: 0 5px; }
+      .nav-field .subject-search-grid .search-cell input {
+        padding: 0;
+        background: none;
+        height: 20px;
+        width: 130px;
+        color: white;
+        outline: none;
+        border: none; }
+        .nav-field .subject-search-grid .search-cell input::placeholder {
+          font-size: 10px;
+          color: white; }
+    .nav-field .subject-search-grid .menu-icon-cell i {
+      font-size: 25px; }
+
+.overall-card-zone {
+  width: 100%;
+  height: calc(100% - 80px); }
+
+.people-field {
+  display: inline-block;
+  flex-wrap: wrap;
+  width: 230px;
+  height: 630px;
+  overflow: auto; }
+  .people-field::-webkit-scrollbar {
+    width: 0; }
+  .people-field .people-grid {
+    height: 230px;
+    width: 100%;
+    background: #3B4544;
+    padding: 20px;
+    color: #CDC9AE; }
+    .people-field .people-grid.anton {
+      background: #2B2D2C; }
+    .people-field .people-grid.jan {
+      background: #1F1F21; }
+    .people-field .people-grid .photo-cell {
+      width: 100%;
+      margin: 8px 0; }
+      .people-field .people-grid .photo-cell .photo {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        background: url("/images/greg.jpg");
+        background-size: 130px;
+        background-position: center; }
+        .people-field .people-grid .photo-cell .photo.anton {
+          background: url("/images/anton.jpg");
+          background-size: 100px;
+          background-position: 90px; }
+        .people-field .people-grid .photo-cell .photo.jan {
+          background: url("/images/jan.jpg");
+          background-size: 200px;
+          background-position: 145px 120px; }
+    .people-field .people-grid .name-cell {
+      font-size: 20px;
+      font-weight: bold;
+      text-align: center; }
+    .people-field .people-grid .explanation-cell {
+      margin: 5px;
+      text-align: center;
+      font-size: 10px; }
+    .people-field .people-grid .division-line {
+      width: 45px;
+      border: .5px solid #CDC9AE;
+      margin: 15px auto; }
+
+.icons {
+  text-align: center; }
+  .icons i {
+    font-size: 10px;
+    margin: 0 5px;
+    cursor: pointer; }
+
+.card-grid-field {
+  display: inline-block;
+  overflow: auto;
+  width: 720px;
+  height: 100%; }
+  .card-grid-field::-webkit-scrollbar {
+    width: 0; }
+  .card-grid-field .three-card-grid {
+    width: 100%;
+    height: 460px; }
+    .card-grid-field .three-card-grid .two-card-grid {
+      width: calc(100% - 230px);
+      height: 100%;
+      display: inline-block; }
+
+.widest-card-cell {
+  width: 100%;
+  height: 230px;
+  position: relative;
+  overflow: hidden; }
+  .widest-card-cell:hover .background-cell {
+    transform: scale(1.05); }
+  .widest-card-cell:hover .cover-cell .music-cell .button {
+    color: #DEA447;
+    border: 1px solid #DEA447; }
+
+.slim-card-cell {
+  width: 230px;
+  height: 460px;
+  display: inline-block;
+  position: relative;
+  color: black;
+  overflow: hidden; }
+  .slim-card-cell .content-cell {
+    position: absolute;
+    bottom: 0;
+    padding: 20px;
+    width: 100%;
+    height: 160px;
+    background: white; }
+
+.wide-card-cell {
+  width: 100%;
+  height: 230px;
+  position: relative;
+  overflow: hidden; }
+  .wide-card-cell .content-cell {
+    width: 160px;
+    height: 230px;
+    padding: 20px;
+    background: #D9352A;
+    color: white;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    right: 0; }
+  .wide-card-cell:hover .background-cell {
+    transform: scale(1.05); }
+  .wide-card-cell:hover .cover-cell .button {
+    color: #DEA447;
+    border: 1px solid #DEA447; }
+
+.triangle-cell {
+  position: absolute;
+  top: 0;
+  width: 100px;
+  height: 100px;
+  background: #D9352A;
+  transform: translate(340px, 65px) rotate(45deg);
+  transform-origin: 50% 50%; }
+  .triangle-cell.bottom-side-div {
+    background: goldenrod;
+    top: 0; }
+
+.background-cell {
+  width: 100%;
+  height: 100%;
+  transition: transform .3s;
+  background-size: cover !important;
+  background-position: center !important; }
+  .background-cell.wide-card-cell {
+    background: url("/images/goldenfield.jpg"); }
+    .background-cell.wide-card-cell.bottom {
+      background: url("/images/autumngorge.JPG"); }
+  .background-cell.slim-card-cell {
+    background: url("/images/highroad.jpg"); }
+  .background-cell.widest-card-cell {
+    background: url("/images/djrashad.jpg"); }
+  .background-cell:hover {
+    transform: scale(1.05); }
+
+.cover-cell {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(10, 10, 10, 0.5);
+  color: white;
+  z-index: 100;
+  top: 0;
+  pointer-events: none; }
+  .cover-cell.widest-card-cell {
+    flex-wrap: unset; }
+
+.music-cell {
+  width: 100%;
+  height: 100px;
+  position: relative; }
+  .music-cell .soundwave {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    width: 620px;
+    height: 80px;
+    background: url("/images/soundwave.png");
+    background-size: 620px 80px;
+    background-position: center; }
+
+.button {
+  position: absolute;
+  bottom: 25px;
+  width: 30px;
+  height: 30px;
+  margin: auto;
+  border: 1px solid white;
+  transition: all .2s;
+  cursor: pointer;
+  pointer-events: visible; }
+  .button.pause {
+    bottom: calc(50% - 15px);
+    left: 30px; }
+  .button:hover {
+    color: #DEA447;
+    border: 1px solid #DEA447; }
+  .button i {
+    font-size: 10px; }
+
+.title {
+  width: 120px;
+  padding: 8px;
+  font-size: 13px;
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
+  text-align: center;
+  margin: auto; }
+  .title.right-side-div {
+    margin: 20px 0; }
+  .title.bottom-side-div {
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    margin: auto; }
+  .title.whole-side-div {
+    width: fit-content;
+    height: fit-content;
+    margin: 20px auto; }
+
+.text {
+  text-align: left;
+  margin: 30px 0;
+  font-size: 10px; }
+  .text.bottom-side-div {
+    margin: 20px 0;
+    word-break: keep-all; }
+
+.flex {
+  display: flex; }
+
+.flex-1 {
+  flex: 1; }
+
+.align-center {
+  align-items: center;
+  justify-content: center; }
+
+.side-align-center {
+  justify-content: center; }
+
+/*# sourceMappingURL=pinit.css.map */

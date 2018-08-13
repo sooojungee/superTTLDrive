@@ -1,0 +1,440 @@
+@import url('https://fonts.googleapis.com/css?family=Hind+Madurai:400,500,700|Roboto:400,500,700')
+
+*
+  box-sizing: border-box
+  //border: 1px solid gray
+
+body
+  margin: 0
+  padding: 0
+  width: 100vw
+  height: 100vh
+  //min-height: 740px * 2.5
+  border-radius: 10px
+  display: flex
+  font-family: Hind Madurai, sans-serif
+
+
+// ZONE
+$menu-bar-zone-width: 130px
+.menu-bar-zone
+  width: $menu-bar-zone-width
+  min-width: $menu-bar-zone-width
+  height: 100%
+
+.main-body-zone
+  height: 100%
+  flex-flow: wrap
+
+
+
+// FIELD
+$menu-field-bottom-height: 200px
+$destination-height: 230px
+.logo-field
+  width: 100%
+  height: $menu-bar-zone-width
+  background: #2ABFBD
+  cursor: pointer
+  .logo
+    width: 80px
+    height: 60px
+    background: url("/images/velo.JPG")
+    background-size: cover
+    background-position: center
+
+.menu-field
+  width: 100%
+  height: calc(100% - #{$menu-bar-zone-width} - #{$menu-field-bottom-height})
+  overflow-y: auto
+  overflow-x: hidden
+  word-wrap: break-spaces
+  //임시로 워드랩
+  background: #121920
+  padding: 20px
+  &::-webkit-scrollbar
+    width: 0
+  &.bottom
+    height: $menu-field-bottom-height
+  .icons
+    width: 100%
+    height: 90px
+    cursor: pointer
+    //임의로 줌
+    line-height: $menu-bar-zone-width
+    text-align: center
+    i
+      font-size: 30px
+      color: #262E31
+      transition: color .3s
+    &:hover
+      i
+        color: #2ABFBD
+
+.nav-field
+  width: 100%
+  height: $menu-bar-zone-width
+  background: white
+  //flex-flow: wrap
+.destination-field
+  width: 100%
+  height: $destination-height
+.sights-travellers-field
+  width: 100%
+  min-height: calc(100% - #{$menu-bar-zone-width} - #{$destination-height})
+  height: fit-content
+  display: block
+  overflow: hidden
+
+
+
+
+
+
+// GRID
+$travellers-width: 300px
+.input-grid
+  align-items: center
+  padding: 50px
+.profile-grid
+  width: $travellers-width
+  height: 100%
+  color: #DEDFDF
+  font-size: 18px
+  transition: color .4s
+  cursor: pointer
+  i
+    font-size: 20px
+    transition: color .4s
+    &:hover
+      color: #D9352A
+
+.destination-photo-grid
+  width: 100%
+  height: 100%
+  display: block
+  flex-flow: nowrap
+  background: url("/images/petersburg.jpg")
+  background-position: center
+  background-size: cover
+.sights-grid
+  display: inline-block
+  //width: calc(100% - #{$travellers-width})
+  height: calc(100vh - #{$destination-height} - #{$menu-bar-zone-width})
+  background: #EEEEEE
+  overflow: hidden
+  &::-webkit-scrollbar
+    width: 0
+.travellers-grid
+  position: relative
+  display: inline-block
+  width: 0
+  height: calc(100vh - #{$destination-height} - #{$menu-bar-zone-width})
+  background: white
+  overflow: hidden
+  transition: width .4s
+  &[type='out']
+    width: $travellers-width
+  &[type='in']
+
+
+
+
+
+// PART
+$sights-card-padding: 206px / 8
+$travellers-title-height: 100px
+$travellers-input-height: 150px
+.input-part
+  width: fit-content
+  height: fit-content
+  border-bottom: 2px solid #DEDFDF
+  color: lightgray
+  transition: border-bottom-color .3s, color .3s
+  input
+    width: 400px
+    height: 40px
+    border: none
+    outline: none
+    padding: 10px
+    &::placeholder
+      color: lightgray
+      font-size: 15px
+      font-weight: bold
+  &:hover
+    color: #2ABFBD
+    border-bottom: 2px solid #2ABFBD
+
+.profile-photo-part
+  width: 50px
+  height: 50px
+  .profile-photo
+    width: 100%
+    height: 100%
+    border-radius: 50%
+    background: url("/images/anthony.jpg")
+    background-size: cover
+
+.name-part
+  color: lightgray
+  font-weight: bold
+  margin: 10px
+  transition: color .3s
+  &:hover
+    color: #2ABFBD
+
+.destination-cover-part
+  height: 100%
+  background: rgba(10, 10, 10, 0.6)
+  position: relative
+
+.flight-information-part
+  width: $travellers-width / 2
+  height: 100%
+  background: rgba(184, 188, 94, 0.8)
+  flex-flow: column
+  color: white
+  &.price
+    background: rgba(47, 214, 180, 0.8)
+  i
+    margin: 20px
+    font-size: 30px
+
+.sights-menu-part
+  height: 100px
+  padding: $sights-card-padding
+  font-size: 20px
+  color: lightgray
+  .bar
+    height: 70%
+    border-left: 2px solid #dddddd
+    margin: 5px
+  i
+    margin: 0 20px
+    cursor: pointer
+    transition: color .3s
+    &.fas.fa-chevron-left
+      transition: all .4s
+      font-size: 25px
+      color: lightgray
+      &:hover
+        color: #2ABFBD
+      &[type='out']
+        color: #2ABFBD
+        transform: rotate(180deg)
+    &:hover, &:active
+      color: #2ABFBD
+
+.card-part
+  height: fit-content
+  padding: 0 $sights-card-padding 0 $sights-card-padding
+  flex-flow: wrap
+  overflow: auto
+  &::-webkit-scrollbar
+    width: 0
+  &.list
+    .card-cover-cell
+      width : 100%
+  &[type='lines']
+    .card-cover-cell
+      width : 100%
+
+
+.travellers-title-part
+  height: $travellers-title-height
+  white-space: nowrap
+  padding: 0 55px
+  line-height: 100px
+  font-size: 20px
+  color: #b2b2b2
+  font-weight: bold
+
+.travellers-part
+  height: calc(100% - #{$travellers-title-height} - #{$travellers-input-height})
+  flex-flow: wrap
+  overflow: auto
+  &::-webkit-scrollbar
+    width: 0
+
+
+.travellers-input-part
+  width: 100%
+  height: $travellers-input-height
+  background: white
+  input
+    border: none
+    outline: none
+    width: 200px
+    height: 30px
+    &::placeholder
+      font-size: 18px
+      color: #898989
+
+  i
+    color: lightgray
+
+
+
+// CELL
+$sights-card-width: 300px
+$sights-card-height: 250px
+$sights-photo-height: 180px
+.destination-title-cell
+  position: absolute
+  bottom: 30px
+  left: 45px
+  color: white
+  font-size: 15px
+  font-weight: bold
+  .title
+    margin: 0 10px
+  i
+    font-size: 20px
+
+.text-cell
+  &.bold
+    font-weight: bold
+
+.subject-cell
+  .subject
+    margin: 0 $sights-card-padding
+    cursor: pointer
+    font-weight: bold
+    transition: color .3s
+    &:hover
+      color: #2ABFBD
+
+.card-cover-cell
+  width: calc(#{$sights-card-width} + #{$sights-card-padding} * 2)
+  height: calc(#{$sights-card-height} + #{$sights-card-padding} * 2)
+  padding: 0 $sights-card-padding ($sights-card-padding * 2) $sights-card-padding
+
+.sights-card-cell
+  width: 100%
+  height: 100%
+  background: white
+  border-radius: 0 0 5px 5px
+  box-shadow: 0px 3px 5px 0 lightgray
+  &:hover
+    .sights-content-div
+      i
+        font-weight: bold
+      .content
+        .text
+          text-decoration: underline
+          cursor: pointer
+    .sights-photo
+      transform: scale(1.05)
+  .sights-content-div
+    height: calc(100% - #{$sights-photo-height})
+    padding: 20px
+    color: gray
+    .content
+      .text
+        font-size: 10px
+        &.bold
+          font-size: 15px
+          font-weight: bold
+    i
+      cursor: pointer
+      font-size: 13px
+      color: #2ABFBD
+
+  .sights-photo-div
+    width: 100%
+    height: $sights-photo-height
+    background: #EEEEEE
+    overflow: hidden
+    cursor: pointer
+    position: relative
+    .sights-photo
+      height: 100%
+      background: url("/images/cory.jpg")
+      background-position: center !important
+      background-size: cover !important
+      transition: all .3s
+      @for $i from 2 through 6
+        &.petersburg#{$i}
+          background: url("/images/petersburg#{$i}.jpg")
+    .profile-photo
+      width: 50px
+      height: 50px
+      border-radius: 50%
+      border: 1px solid white
+      position: absolute
+      top: 15px
+      right: 20px
+      background: url("/images/jan.jpg")
+      background-size: cover
+
+.travellers-cell
+  width: 100%
+  padding: 10px 50px
+  transition: background .3s
+  .photo-div
+    width: 35px
+    height: 35px
+    .travellers-photo
+      height: 100%
+      border-radius: 50%
+      background: url("/images/jeremy.jpg")
+      background-size: cover !important
+      border: none
+      &.kimberly
+        background: url("/images/kimberly.jpg")
+      &.chi
+        background: url("/images/chi.jpg")
+      &.karan
+        background: url("/images/karan.jpg")
+      &.keeri
+        background: url("/images/keeri.jpg")
+      &.katy
+        background: url("/images/katy.jpg")
+      &.jeff
+        background: url("/images/jeff.jpg")
+      &.peter
+        background: url("/images/peter.jpg")
+  .travellers-name-div
+    font-size: 15px
+    padding-left: 15px
+    color: #b2b2b2
+    transition: color .3s
+  .online-div
+    width: 10px
+    height: 10px
+    border-radius: 50%
+    border: none
+    background: #2ABFBD
+    &.online
+      background: #D9352A
+  &:hover
+    background: rgba(42, 191, 189, 0.4) //rgba(26, 37, 47, 0.6)
+    .travellers-name-div
+      color: white
+
+.travellers-input-cover-cell
+  width: fit-content
+  height: fit-content
+  border-bottom: 2px solid #DEDFDF
+  transition: border-bottom-color .4s
+  &:hover
+    border-bottom: 2px solid #2ABFBD
+    i
+      color: #2ABFBD
+  i
+    transition: color .4s
+
+
+// ETC
+.flex
+  display: flex
+
+.flex-1
+  flex: 1
+
+.align-center
+  align-items: center
+  justify-content: center
+
+.relative
+  position: relative

@@ -1,0 +1,334 @@
+html
+	head
+		link(rel='stylesheet', href='/stylesheets/20180730/proui.css')
+		link(link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css"
+		integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous")
+		link(href='https://fonts.googleapis.com/icon?family=Material+Icons',
+		rel='stylesheet')
+	body
+		.toast-area
+			.toast.error.flex.height-align-center
+				.icon-cell.flex.align-center
+					i.fas.fa-times-circle
+				.message-cover.flex-1
+					.message-cell.title ERROR MESSAGE!
+				.delete-cell
+					i.fas.fa-times
+			.toast.success.flex.height-align-center
+				.icon-cell.flex.align-center
+					i.fas.fa-check-circle
+				.message-cover.flex-1
+					.message-cell.title SUCCESS MESSAGE!
+				.delete-cell
+					i.fas.fa-times
+			.toast.notice.flex.height-align-center
+				.icon-cell.flex.align-center
+					i.fas.fa-info-circle
+				.message-cover.flex-1
+					.message-cell.title NOTICE!
+				.delete-cell
+					i.fas.fa-times
+
+			.toast.notice.flex.height-align-center
+				.icon-cell.flex.align-center
+					i.fas.fa-info-circle
+				.message-cover.flex-1
+					.message-cell.title NOTICE
+					.message-cell.flex.flex-1.height-align-center.
+						I am a notification to notice you about how I am showing on the monitor. <br>would you help me out?
+				.delete-cell
+					i.fas.fa-times
+
+		.left-menu-zone
+
+		.main-body-zone.flex-1
+			.nav-field.flex
+				.button-grid.flex.align-center
+					i.fas.fa-bars
+				.button-grid.flex.align-center
+					i.fas.fa-wrench
+				.input-grid.flex.flex-1.height-align-center
+					input(placeholder='Search..')
+				.button-grid.flex.align-center
+					i.fas.fa-share-alt
+					.new-alarm.flex.align-center 4
+				.profile-photo-grid.flex.align-center
+					.profile-photo-part
+					i.material-icons keyboard_arrow_down
+
+			.welcome-field
+				.photo-grid
+					.current-status-part.flex
+						.greeting-cell.flex.flex-1
+							.welcome-div Welcome <b>Amy</b>
+							.ment-div You Look Awsome!
+						.information-cell.flex.align-center
+							.numbers-div $93.7k
+							.theme-div
+								i.far.fa-thumbs-up
+								| Great
+						.information-cell.flex.align-center
+							.numbers-div 167k
+							.theme-div
+								i.far.fa-heart
+								| Likes
+						.information-cell.flex.align-center
+							.numbers-div 101
+							.theme-div
+								i.far.fa-calendar
+								| Events
+						.information-cell.flex.align-center
+							.numbers-div 27° C
+							.theme-div
+								i.fas.fa-map-marker-alt
+								| Sydney
+
+
+			.card-grid-field
+				.card-top-grid.flex
+					.smallest-card-cover
+						.smallest-card-part.flex.align-center
+							.theme-image-cell.flex.align-center
+								i.fas.fa-file-alt
+							.title-explanation-cell.flex-1
+								.title New <b>Article</b>
+								.expalnation Mountain Trip
+					.smallest-card-cover
+						.smallest-card-part.flex.align-center
+							.theme-image-cell.flex.align-center.second
+								i.fas.fa-dollar-sign
+							.title-explanation-cell.flex-1
+								.title + <b>250%</b>
+								.expalnation Sales Today
+					.smallest-card-cover
+						.smallest-card-part.flex.align-center
+							.theme-image-cell.flex.align-center.third
+								i.fas.fa-envelope
+							.title-explanation-cell.flex-1
+								.title 5 <b>Messages</b>
+								.expalnation Support Center
+					.smallest-card-cover
+						.smallest-card-part.flex.align-center
+							.theme-image-cell.flex.align-center.fourth
+								i.far.fa-image
+							.title-explanation-cell.flex-1
+								.title +30 <b>Photos</b>
+								.expalnation Gallery
+					.smallest-card-cover.middle
+						.smallest-card-part.flex.align-center
+							.theme-image-cell.flex.align-center
+								i.fas.fa-book
+							.title-explanation-cell.flex-1.middle
+								.title Latest <b>Sales</b>
+								.expalnation Per hour
+							.flex-1 // graph
+					.smallest-card-cover.middle
+						.smallest-card-part.flex.align-center
+							.theme-image-cell.flex.align-center
+								i.fas.fa-crown
+							.title-explanation-cell.flex-1.middle
+								.title Our <b>Brand</b>
+								.expalnation Popularity over time
+							.flex-1 // graph
+
+				.card-bottom-grid.flex
+					.half-divide-part
+						.brown-card-cover
+							.brown-card-cell
+								.brown-nav-bar.flex
+									.latest-news Latest <b>News</b>
+									.button View all
+									.write-setting-button-div
+										i.fas.fa-pencil-alt
+										i.fas.fa-cog
+
+								.content-zone
+									.content-field-cover.flex
+										.content-field.left.flex
+											.time-notification-grid just now
+											.theme-image-grid.flex.align-center
+												i.fas.fa-plane
+										.content-field.flex-1
+											.report-grid
+												.title-part Jordan Carter
+												.portion-part.line-height-larger The trip was an amazing and a life changing experience!!
+												.article-button
+													i.fas.fa-file-alt
+													| Read the article
+												.photo-part.flex
+													.photo-cell
+													.photo-cell.second
+
+									.content-field-cover.flex
+										.content-field.left.flex
+											.time-notification-grid 5 min ago
+											.theme-image-grid.flex.align-center
+												i.fas.fa-file-alt
+										.content-field.flex-1
+											.report-grid
+												.title-part Administrator
+												.portion-part.only.
+													<b>Free courses</b> for all our customers at A1 Conference Room - 9:00<b>am</b> tomorrow!
+
+									.content-field-cover.flex
+										.content-field.left.flex
+											.time-notification-grid 3 hours ago
+											.theme-image-grid.flex.align-center
+												i.fas.fa-cocktail
+										.content-field.flex-1
+											.report-grid
+												.title-part Ella Winter
+												.portion-part.line-height-larger.
+													<b>Happy Hour!</b> Free drinks at <a>Cafe-Bar</a> all day long!
+												.photo-part.flex
+													.photo-cell.map
+
+									.content-field-cover.flex
+										.content-field.left.flex
+											.time-notification-grid yesterday
+											.theme-image-grid.flex.align-center
+												i.fas.fa-utensils
+										.content-field.flex-1
+											.report-grid
+												.title-part Patricia Woods
+												.portion-part.line-height-larger Today I had the lunch of my life! It was delicious!
+												.photo-part.flex
+													.photo-cell.third
+
+									.content-field-cover.flex
+										.content-field.left.flex
+											.time-notification-grid 2 days ago
+											.theme-image-grid.flex.align-center
+												i.far.fa-smile
+										.content-field.flex-1
+											.report-grid
+												.title-part Administrator
+												.portion-part.only.
+													To thank you all for your support we would like to let you know that you will receive free feature updates for life! You are awesome!
+
+									.content-field-cover.flex
+										.content-field.left.flex
+											.time-notification-grid 1 week ago
+											.theme-image-grid.flex.align-center
+												i.fas.fa-pencil-alt
+										.content-field.flex-1
+											.report-grid
+												.title-part Nicole Ward
+												.portion-part.only.line-height-larger.
+													Consectetur adipiscing elit. Maecenas ultrices, justo vel imperdiet gravida, urna ligula hendrerit nibh, ac cursus nibh sapien in purus. Mauris tincidunt tincidunt turpis in porta. Integer fermentum tincidunt auctor. Vestibulum ullamcorper, odio sed rhoncus imperdiet, enim elit sollicitudin orci, eget dictum leo mi nec lectus. Nam commodo turpis id lectus scelerisque vulputate.
+													<br>
+													<br>
+													Integer sed dolor erat. Fusce erat ipsum, varius vel euismod sed, tristique et lectus? Etiam egestas fringilla enim, id convallis lectus laoreet at. Fusce purus nisi, gravida sed consectetur ut, interdum quis nisi. Quisque egestas nisl id lectus facilisis scelerisque? Proin rhoncus dui at ligula vestibulum ut facilisis ante sodales! Suspendisse potenti. Aliquam tincidunt sollicitudin sem nec ultrices. Sed at mi velit. Ut egestas tempor est, in cursus enim venenatis eget! Nulla quis ligula ipsum.
+
+									.content-field-cover.flex
+										.content-field.left.flex
+										.content-field.flex-1
+											.report-grid
+												.article-button.view-more View more..
+
+					.half-divide-part
+						.brown-card-cover
+							.brown-card-cell
+								.brown-nav-bar.flex
+									.latest-news Your <b>VIP Plan</b>
+									.button Upgrade
+									.write-setting-button-div
+										i.fas.fa-pencil-alt
+										i.fas.fa-cog
+
+								.content-zone.right.flex
+									.number-card-cover.flex.align-center
+										.number-field
+											.number-grid.bold 35
+											.number-grid /50
+										.theme-field
+											i.far.fa-folder
+											| Projects
+
+									.number-card-cover.flex.align-center
+										.number-field
+											.number-grid.bold 25
+											.number-grid /100GB
+										.theme-field
+											i.far.fa-hdd
+											| Storage
+
+									.number-card-cover.flex.align-center
+										.number-field
+											.number-grid.bold 65
+											.number-grid /1k
+										.theme-field
+											i.far.fa-building
+											| Clients
+
+									.number-card-cover.flex.align-center
+										.number-field
+											.number-grid.bold 10
+											.number-grid k
+										.theme-field
+											i.far.fa-envelope
+											| Emails
+
+						.sales-earnings-cover
+							.graph-image-cell
+								.title-div
+									.title.big <b>Sales</b> & <b>Earnings</b>
+									.title Last Year
+							.bottom-cover.flex.align-center
+								.number-card-cover.flex.align-center.three-div
+									.number-field
+										.number-grid.bold 7.500
+										.number-grid
+									.theme-field
+										| Clients
+								.number-card-cover.flex.align-center.three-div
+									.number-field
+										.number-grid.bold 10.970
+										.number-grid
+									.theme-field
+										| Sales
+								.number-card-cover.flex.align-center.three-div
+									.number-field
+										.number-grid.big $
+										.number-grid.bold 31.230
+									.theme-field
+										| Earnings
+
+
+
+
+						.sales-earnings-cover
+							.graph-image-cell.weather-station
+								.title-div.weather-station.flex
+									.title-cover.flex-1
+										.title.big Weather <b>Station</b>
+										.title
+											i.fas.fa-location-arrow
+											| The Mountain
+									.weather-icon.flex.align-center
+										i.fas.fa-sun
+							.bottom-cover.flex.align-center
+								.number-card-cover.flex.align-center
+									.number-field
+										.number-grid.bold 10°
+										.number-grid c
+									.theme-field
+										| Sunny
+								.number-card-cover.flex.align-center
+									.number-field
+										.number-grid.bold 80
+										.number-grid %
+									.theme-field
+										| Humidity
+								.number-card-cover.flex.align-center
+									.number-field
+										.number-grid.bold 60
+										.number-grid km/h
+									.theme-field
+										| Wind
+								.number-card-cover.flex.align-center
+									.number-field
+										.number-grid.bold 5
+										.number-grid km
+									.theme-field
+										| Visibility

@@ -1,0 +1,186 @@
+//extends velolayout
+//block link
+	link(rel='stylesheet', href='/stylesheets/20180726/velo.css')
+html
+	head
+		meta(name='viewport', content="width=device-width, user-scalable=no")
+		link(rel='stylesheet', href='/stylesheets/20180726/velo.css')
+		//link(rel='stylesheet', href='/stylesheets/20180726/velo2.css')
+		link(link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css"
+		integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous")
+		link(href='https://fonts.googleapis.com/icon?family=Material+Icons',
+		rel='stylesheet')
+		script(src="https://code.jquery.com/jquery-3.3.1.js",
+		integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=",
+		crossorigin="anonymous")
+	body
+		.menu-bar-zone
+			.logo-field.flex.align-center
+				.logo
+			.menu-field
+				.icons.flex.align-center
+					i.fas.fa-feather-alt
+				.icons.flex.align-center
+					i.far.fa-heart
+				.icons.flex.align-center
+					i.fas.fa-globe-americas
+				.icons.flex.align-center
+					i.fas.fa-paperclip
+			.menu-field.bottom
+				.icons.flex.align-center
+					i.fas.fa-inbox
+				.icons.flex.align-center
+					i.fas.fa-cog
+
+		.main-body-zone.flex.flex-1
+
+			.nav-field.flex
+				.input-grid.flex.flex-1
+					.input-part.flex.align-center
+						input(placeholder='Search places')
+						i.fas.fa-search
+				.profile-grid.flex.align-center
+					.profile-photo-part
+						.profile-photo
+					.name-part Anthony Delmas
+					i.fas.fa-power-off
+
+			.destination-field
+				.destination-photo-grid.flex
+					.destination-cover-part.flex.flex-1
+						.destination-title-cell.flex.align-center
+							i.fas.fa-map-marker-alt
+							.title ST.PETERSBURG
+					.flight-information-part.flex.align-center
+						i.far.fa-clock
+						.text-cell Best time to visit
+						.text-cell.bold MARCH
+					.flight-information-part.price.flex.align-center
+						i.fas.fa-plane
+						.text-cell 20 flights from
+						.text-cell.bold 350$
+
+			.sights-travellers-field.flex
+				.sights-grid.flex-1
+
+					.sights-menu-part.flex.align-center
+						.subject-cell.flex.flex-1
+							.subject Newest
+							.subject Popular
+						i.fas.fa-th-large(type='squares')
+						i.fas.fa-th-list(type='lines')
+						.bar
+						i.fas.fa-chevron-left(type='in')
+
+						//.list
+					.card-part.flex(type='squares')
+						.card-cover-cell
+							.sights-card-cell
+								.sights-photo-div
+									.sights-photo
+									.profile-photo
+								.sights-content-div.flex.align-center
+									.content.flex-1
+										.text.bold Cory Peterson
+										.text Texas, USA
+									i.far.fa-heart  255
+						.card-cover-cell
+							.sights-card-cell
+								.sights-photo-div
+									.sights-photo.petersburg2
+									.profile-photo
+								.sights-content-div.flex.align-center
+									.content.flex-1
+										.text.bold Jamie Yow
+										.text Sydney, Australia
+									i.far.fa-heart  4.5k
+						.card-cover-cell
+							.sights-card-cell
+								.sights-photo-div
+									.sights-photo.petersburg3
+									.profile-photo
+								.sights-content-div.flex.align-center
+									.content.flex-1
+										.text.bold Keeran Smith
+										.text Istanbul, Turkey
+									i.far.fa-heart  1.2k
+						.card-cover-cell
+							.sights-card-cell
+								.sights-photo-div
+									.sights-photo.petersburg4
+									.profile-photo
+								.sights-content-div.flex.align-center
+									.content.flex-1
+										.text.bold Dan Calvin
+										.text Michigan, USA
+									i.far.fa-heart  4k
+						.card-cover-cell
+							.sights-card-cell
+								.sights-photo-div
+									.sights-photo.petersburg5
+									.profile-photo
+								.sights-content-div.flex.align-center
+									.content.flex-1
+										.text.bold Jim Timberland
+										.text Delhi, India
+									i.far.fa-heart  150
+						.card-cover-cell
+							.sights-card-cell
+								.sights-photo-div
+									.sights-photo.petersburg6
+									.profile-photo
+								.sights-content-div.flex.align-center
+									.content.flex-1
+										.text.bold Hoolie Morgan
+										.text Bali, Indonesia
+									i.far.fa-heart  22k
+
+				.travellers-grid(type='in')
+					.travellers-title-part Recent Travellers
+					.travellers-part
+						.travellers-cell.flex.align-center
+							.photo-div
+								.travellers-photo
+							.travellers-name-div.flex-1 Jeremy Shaw
+							.online-div
+						.travellers-cell.flex.align-center
+							.photo-div
+								.travellers-photo.kimberly
+							.travellers-name-div.flex-1 Kimberly Wales
+							.online-div.online
+						.travellers-cell.flex.align-center
+							.photo-div
+								.travellers-photo.chi
+							.travellers-name-div.flex-1 Chi Chow
+							.online-div
+						.travellers-cell.flex.align-center
+							.photo-div
+								.travellers-photo.karan
+							.travellers-name-div.flex-1 Karan Sharma
+							.online-div
+						.travellers-cell.flex.align-center
+							.photo-div
+								.travellers-photo.keeri
+							.travellers-name-div.flex-1 Keeri Pervose
+							.online-div
+						.travellers-cell.flex.align-center
+							.photo-div
+								.travellers-photo.katy
+							.travellers-name-div.flex-1 Katy Gomes
+							.online-div
+						.travellers-cell.flex.align-center
+							.photo-div
+								.travellers-photo.jeff
+							.travellers-name-div.flex-1 Jeff Walton
+							.online-div
+						.travellers-cell.flex.align-center
+							.photo-div
+								.travellers-photo.peter
+							.travellers-name-div.flex-1 Peter John
+							.online-div
+					.travellers-input-part.flex.align-center
+						.travellers-input-cover-cell
+							input(placeholder='Chat with')
+							i.fas.fa-search
+
+	script(src='/javascripts/20180726/velo.js')

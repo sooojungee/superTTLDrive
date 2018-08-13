@@ -1,0 +1,190 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,500,700");
+* {
+  box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  background: url("/images/turkey.jpg");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  font-family: Roboto; }
+
+.cover-zone {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -10;
+  background: radial-gradient(transparent, transparent, transparent, rgba(0, 0, 0, 0.5)); }
+
+.top-bottom-zone {
+  height: 60px;
+  color: rgba(255, 255, 255, 0.8); }
+  .top-bottom-zone .div {
+    width: 230px; }
+    .top-bottom-zone .div i {
+      margin: 0 12px 0 20px;
+      font-size: 20px;
+      color: rgba(255, 255, 255, 0.8);
+      transition: color .3s;
+      cursor: pointer; }
+      .top-bottom-zone .div i:hover {
+        color: white; }
+
+.middle-zone {
+  height: calc(100% - 60px * 2);
+  position: relative;
+  color: white; }
+
+.links-field {
+  height: 100%;
+  font-size: 13px; }
+
+.weather-region-field {
+  height: fit-content;
+  margin: 11px 9px;
+  width: 80px;
+  cursor: pointer; }
+
+.time-greeting-field {
+  width: 100%;
+  height: 300px;
+  margin: auto; }
+
+.to-do-field {
+  width: 100%;
+  height: 100px;
+  position: absolute;
+  bottom: 8%; }
+  .to-do-field:hover .check-box-cell, .to-do-field:active .check-box-cell {
+    border: 2px solid white; }
+  .to-do-field:hover .delete-cell, .to-do-field:active .delete-cell {
+    color: rgba(255, 255, 255, 0.8); }
+
+.quote-body-field {
+  margin: 0 auto;
+  min-width: 230px;
+  text-align: center;
+  color: white;
+  font-size: 18px; }
+
+.todo-button-field {
+  margin-right: 20px;
+  text-align: right;
+  width: 230px;
+  color: rgba(255, 255, 255, 0.8);
+  transition: color .3s;
+  cursor: pointer; }
+  .todo-button-field:hover {
+    color: white; }
+
+.links-grid {
+  margin: 20px;
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.8);
+  transition: color .3s;
+  cursor: pointer; }
+  .links-grid:hover {
+    color: white; }
+
+.weather-grid {
+  height: 100%; }
+  .weather-grid i {
+    font-size: 18px;
+    margin-right: 10px; }
+
+.region-grid {
+  font-size: 11px;
+  flex-direction: row-reverse;
+  padding: 0 10px 3px;
+  line-height: 11px; }
+
+.time-grid {
+  font-size: 160px;
+  text-align: center;
+  line-height: 150px;
+  text-shadow: 0 0 30px #969696; }
+
+.greeting-grid {
+  font-size: 54px;
+  padding-top: 5px;
+  text-shadow: 0 0 30px #969696;
+  text-align: center; }
+
+.today-grid {
+  text-align: center;
+  font-weight: bold;
+  font-size: 21px;
+  margin: 20px 0 5px;
+  text-shadow: 0 0 30px #969696; }
+
+.celsius-cell {
+  font-size: 25px; }
+
+.degree-cell {
+  font-size: 25px; }
+
+.check-box-cell {
+  width: 20px;
+  height: 20px;
+  border-radius: 5px;
+  border: 2px solid rgba(255, 255, 255, 0);
+  margin: 0 15px;
+  transition: all .3s;
+  cursor: pointer; }
+  .check-box-cell i {
+    font-size: 14px;
+    display: none; }
+  .check-box-cell:hover i {
+    display: flex; }
+
+.to-do-cell {
+  font-size: 35px;
+  color: white;
+  text-align: center;
+  text-shadow: 0 0 30px #969696; }
+
+.delete-cell {
+  color: rgba(255, 255, 255, 0);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0);
+  margin: 0 10px;
+  transition: all .3s;
+  cursor: pointer; }
+  .delete-cell:hover {
+    border: 1px solid white; }
+    .delete-cell:hover i {
+      color: white; }
+
+.flex {
+  display: flex; }
+
+.flex-1 {
+  flex: 1; }
+
+.align-center {
+  align-items: center;
+  justify-content: center; }
+
+.height-align-center {
+  align-items: center; }
+
+@media only screen and (max-width: 480px) {
+  .time-grid {
+    font-size: 100px;
+    line-height: 100px; }
+  .greeting-grid {
+    font-size: 34px; }
+  .today-grid {
+    font-size: 15px; }
+  .to-do-cell {
+    font-size: 20px; }
+  .quote-body-field {
+    display: none; } }
+
+/*# sourceMappingURL=momentum.css.map */
