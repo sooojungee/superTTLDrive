@@ -154,7 +154,7 @@ const UIController = new function () {
     console.log('for 전');
     for(let i = 0 ; i < Object.keys(json).length ; i++){
       let key = Object.keys(json)[i];
-      console.log(json[key]);
+      console.log(json[key]);//
       let category = json[key].category;
       console.log(category);
       console.log($leftBar.find(`#category-${category}`));
