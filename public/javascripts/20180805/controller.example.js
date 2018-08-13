@@ -63,14 +63,14 @@ const UIController = new function () {
     <div class="sights-card-cell">
         <div class="sights-photo-div">
             <div class="hover-dark-background"></div>
-            <div class="i fas fa-music"></div>
+            <div class="type-icon"></div>
         </div>
         <div class="sights-content-div flex align-center">
             <div class="content flex-1">
                 <div class="text bold">FILE NAME HERE</div>
                 <div class="text desc">SOUND / 30KB</div>
             </div>
-            <div class="download-icon"><i class="fas fa-download"></i></div>
+            <div class="download-icon download-file"><i class="fas fa-download"></i></div>
         </div>
         <div class="i material-icons delete">delete</div>
     </div>
@@ -79,10 +79,47 @@ const UIController = new function () {
     // const filecontent = [];
     if (!_.isNil(files.length)) {
       for (let i = 0; i < files.length; i++) {
+        const file = files[i];
         const $ele = $(template);
-        $ele.find('.text.bold').text(files[i].name);
-        $ele.find('.text.desc').text(files[i].size);
-        console.log('gg');
+        $ele.find('.text.bold').text(file.name);
+        $ele.find('.text.desc').text(file.size);
+        $ele.find('.download-file').on('click', function(){
+          FirebaseDB.downloadFile(file.name);
+        });
+        
+        if (!_.isNil(file.type)) {
+          const type = file.type.split('/')[0];
+          
+          switch (type) {
+            case 'image':
+              $ele.find('.type-icon').addClass('i fas fa-image');
+              break;
+            
+            case 'audio':
+              $ele.find('.type-icon').addClass('i fas fa-music');
+              
+              break;
+            case 'application':
+              $ele.find('.type-icon').addClass('i fas fa-code');
+              
+              break;
+            case 'video':
+              $ele.find('.type-icon').addClass('i fas fa-video');
+              
+              break;
+            case 'text':
+              $ele.find('.type-icon').addClass('i fas fa-font');
+              
+              break;
+            default :
+              $ele.find('.type-icon').addClass('i fas fa-file');
+              break;
+          }
+        }
+        else {
+          $ele.find('.type-icon').addClass('i fas fa-file');
+          
+        }
         
         $cardPart.append($ele);
         // filecontent.push(new AppendFile(files[i]));

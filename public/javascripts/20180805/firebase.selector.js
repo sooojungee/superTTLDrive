@@ -93,6 +93,29 @@ const FirebaseDB = {
     return files;
   },
   
+  downloadFile : async (filename)=>{
+    // await storageRef.child(filename).getDownloadURL();
+    await storageRef.child(filename).getDownloadURL().then(function(url) {
+      // `url` is the download URL for 'images/stars.jpg'
+  
+      // This can be downloaded directly:
+      var xhr = new XMLHttpRequest();
+      xhr.responseType = 'blob';
+      xhr.onload = function(event) {
+        var blob = xhr.response;
+      };
+      console.log(url);
+  
+      xhr.open('GET', url);
+      xhr.send();
+      // Or inserted into an <img> element:
+      var img = document.getElementById('myimg');
+      img.src = url;
+    }).catch(function(error) {
+      console.log(error);
+    });
+  }
+  
   
 };
 
