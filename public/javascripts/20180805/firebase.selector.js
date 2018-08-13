@@ -57,17 +57,37 @@ const FirebaseDB = {
     else return null;
   },
   
+  getUsers: async () => {
+    
+    const userList = [];
+    
+    await store.collection("users").get().then(function (querySnapshot) {
+      
+      querySnapshot.forEach(function (doc) {
+        // doc.data() is never undefined for query doc snapshots
+        userList.push(doc.data());
+      });
+      
+    });
+    
+    return userList;
+    
+  },
+  
+  
   // 한 개짜리
   uploadFile: async (uid, file) => {
+    const fileId = new Date().getTime().toString();
+    
     const data = {
       uid: uid,
       name: file.name,
       size: file.size,
       type: file.type,
       lastModifiedDate: file.lastModifiedDate,
-      uploadDate: file.lastModifiedDate
+      uploadDate: fileId
+      
     };
-    const fileId = new Date().getTime().toString();
     
     return await store.collection("files").doc(fileId).set(data);
     
@@ -93,29 +113,43 @@ const FirebaseDB = {
     return files;
   },
   
-  downloadFile : async (filename)=>{
+  downloadFile: async (filename) => {
     // await storageRef.child(filename).getDownloadURL();
-    await storageRef.child(filename).getDownloadURL().then(function(url) {
-      // `url` is the download URL for 'images/stars.jpg'
+    
+    // await storageRef.child(filename).getDownloadURL().then(function (url) {
+    //   // `url` is the download URL for 'images/stars.jpg'
+    //
+    //   // This can be downloaded directly:
+    //   var xhr = new XMLHttpRequest();
+    //   xhr.responseType = 'blob';
+    //   xhr.onload = function (event) {
+    //     var blob = xhr.response;
+    //   };
+    //   console.log(url);
+    //
+    //   xhr.open('GET', url);
+    //   xhr.send();
+    //   // Or inserted into an <img> element:
+    //   var img = document.getElementById('myimg');
+    //   img.src = url;
+    // }).catch(function (error) {
+    //   console.log(error);
+    // });
+    const url = await storageRef.child(filename).getDownloadURL();
+    window.open(url);
+  },
   
-      // This can be downloaded directly:
-      var xhr = new XMLHttpRequest();
-      xhr.responseType = 'blob';
-      xhr.onload = function(event) {
-        var blob = xhr.response;
-      };
-      console.log(url);
-  
-      xhr.open('GET', url);
-      xhr.send();
-      // Or inserted into an <img> element:
-      var img = document.getElementById('myimg');
-      img.src = url;
-    }).catch(function(error) {
-      console.log(error);
+  deleteFile: async (key) => {
+    
+    store.collection("files").doc(key).delete().then(function () {
+      console.log("Document successfully deleted!");
+    }).catch(function (error) {
+      console.error("Error removing document: ", error);
     });
+    
+    //
+    
   }
-  
   
 };
 
@@ -127,7 +161,6 @@ const FirebaseApi = new function () {
   let updateCardListener = null;
   
   function setOnUpdateCardListener(callback) {
-    console.log('sdfaaaaa');
     updateCardListener = callback;
   }
   
@@ -163,6 +196,7 @@ const FirebaseApi = new function () {
     if (!_.isNil(listener)) listener(u);
     
   });
+  
   async function uploadFileData(files) {
     
     const user = auth.currentUser;
@@ -193,6 +227,17 @@ const FirebaseApi = new function () {
     
   }
   
+  function deleteFileData(filename) {
+    const desertRef = storageRef.child(filename);
+    
+    desertRef.delete().then(function () {
+    
+    }).catch(function (error) {
+    
+    });
+  }
+  
+  
   async function readFileData() {
     
     const user = auth.currentUser;
@@ -210,7 +255,8 @@ const FirebaseApi = new function () {
     uploadFileData,
     readFileData,
     setOnReadListener,
-    setOnUpdateCardListener
+    setOnUpdateCardListener,
+    deleteFileData
   };
   
   

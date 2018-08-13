@@ -273,7 +273,8 @@ body {
       height: 40px;
       width: 40px;
       border: 1px solid white;
-      background: #D9352A; }
+      background: #D9352A;
+      background-size: contain; }
   .nav-zone .logout-field {
     position: absolute;
     top: 70px;
