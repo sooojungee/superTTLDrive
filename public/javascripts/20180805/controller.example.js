@@ -3,7 +3,7 @@ const UIController = new function () {
   const $signIn = $('#loginButton');
   const $signOut = $('#logoutButton');
   const $progress = $('.progress');
-  const $drop = $('.upload-field');
+  const $drop = $('.upload-condition-zone');
   const $cardPart = $('.card-part');
   
   const $inputZone = $('#fileUploader');
