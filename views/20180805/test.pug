@@ -12,7 +12,6 @@ html
     script(src="https://www.gstatic.com/firebasejs/5.3.1/firebase.js")
 
 
-
   body
     input#fileUploader(type="file" multiple='multiple')
     .side-bar-cover(type='false')
@@ -22,104 +21,89 @@ html
         .profile-field.flex.align-center
           .profile-photo.left-photo
           .name-email-cover.flex-1
-            .nick-name.left-name nobody
-            .email.left-email nothing
+            .nick-name.left-name Juwon Hong
+            .email.left-email juwonhp373@gmail.com
         .scroll-cover
           .menu-theme.flex.flex-1 저장공간 관리
           .storage-grid
-            .used-storage-part.flex-1 5.5GB / 10GB
             .storage-part.flex
-              .cell.type-image#storage-image(style='width:0%')
-              .cell.type-code#storage-application(style='width:0%')
-              .cell.type-text#storage-text(style='width:0%')
-              .cell.type-sound#storage-audio(style='width:0%')
-              .cell.type-video#storage-video(style='width:0%')
-              .cell.type-etc#storage-etc(style='width:0%')
+              .cell.type-image(style='width:5%')
+              .cell.type-text(style='width:20%')
+              .cell.type-code(style='width:2%')
+              .cell.type-video(style='width:8%')
+              .cell.type-sound(style='width:10%')
+              .cell.type-etc(style='width:16%')
 
             .storage-description-part
               .category
                 .box.type-image
-                .text IMAGE
-                  i#category-image
+                .text#category-image IMAGE
               .category
                 .box.type-text
-                .text TEXT
-                  i#category-text
+                .text#category-text TEXT
               .category
                 .box.type-code
-                .text CODE
-                  i#category-code
+                .text#category-code CODE
               .category
                 .box.type-video
-                .text VIDEO
-                  i#category-video
+                .text#category-video VIDEO
               .category
                 .box.type-sound
-                .text SOUND
-                  i#category-sound
+                .text#category-sound SOUND
               .category
                 .box.type-etc
-                .text ETC
-                  i#category-etc
+                .text#category-etc ETC
           .line
           .menu-theme.flex.flex-1 카테고리
-            .reset-button.flex.align-center
-              .i.fas.fa-undo
           .category-card-grid
-            .category-card-outer(type='')
+            .category-card-outer
               .category-card.type-image
-                .category-card-cover
-                .text-group(type='image')
+                .text-group
                   .name IMAGE
                   .desc-group
                     .count 0
                     .capacity / 0GB
                 .icon-group
                   .i.fas.fa-image.type-image-color
-            .category-card-outer(type='')
-              .category-card.type-code
-                .category-card-cover
-                .text-group(type='application')
-                  .name APPLICATION
-                  .desc-group
-                    .count 0
-                    .capacity / 0GB
-                .icon-group
-                  .i.fas.fa-code.type-code-color
-            .category-card-outer(type='')
+            .category-card-outer
               .category-card.type-text
-                .category-card-cover
-                .text-group(type='text')
+                .text-group
                   .name TEXT
                   .desc-group
                     .count 0
                     .capacity / 0GB
                 .icon-group
                   .i.fas.fa-font.type-text-color
-            .category-card-outer(type='')
-              .category-card.type-sound
-                .category-card-cover
-                .text-group(type='audio')
-                  .name AUDIO
+            .category-card-outer
+              .category-card.type-code
+                .text-group
+                  .name CODE
                   .desc-group
                     .count 0
                     .capacity / 0GB
                 .icon-group
-                  .i.fas.fa-music.type-sound-color
-            .category-card-outer(type='')
+                  .i.fas.fa-code.type-code-color
+            .category-card-outer
               .category-card.type-video
-                .category-card-cover
-                .text-group(type='video')
+                .text-group
                   .name VIDEO
                   .desc-group
                     .count 0
                     .capacity / 0GB
                 .icon-group
                   .i.fas.fa-video.type-video-color
-            .category-card-outer(type='')
+            .category-card-outer
+              .category-card.type-sound
+                .text-group
+                  .name SOUND
+                  .desc-group
+                    .count 0
+                    .capacity / 0GB
+                .icon-group
+                  .i.fas.fa-music.type-sound-color
+            .category-card-outer
               .category-card.type-etc
-                .category-card-cover
-                .text-group(type='etc')
+                .text-group
                   .name ETC
                   .desc-group
                     .count 0
@@ -137,27 +121,22 @@ html
           i.fas.fa-search
         input#search(placeholder='SEARCH')
       .flex-1
-      .nav-profile-field.flex.align-center(type='logout')
-        .login-logout-cover.flex.align-center
-          i.fas.fa-power-off
+      .nav-profile-field.flex.align-center
         .nick-mail-cover
-          .nick-name-grid.name-nick SuperTTL
-          .email-grid.e-mail empty
-        .login-button.flex.align-center
-          i.fas.fa-user-astronaut
-        .profile-photo-grid.align-center
+          .nick-name-grid.name-nick Juwon Hong
+          .email-grid.e-mail juwonhp373@gmail.com
+        .profile-photo-grid
 
-
-      //사용하지 않는 logout-toast
-      //.logout-field(type='false')
-      //   .i.closer.fas.fa-times
-      //   .profile-grid.flex.height-align-center
-      //      .profile-photo-cell
-      //      .profile-info-cell.flex-1
-      //         .nick-name Juwon Hong
-      //         .email juwonhp373@gmail.com
-      //   .button-grid.flex.align-center
-      //      .button.flex.align-center Logout
+      .logout-field(type='false')
+        .i.material-icons.closer close
+        .profile-grid.flex.height-align-center
+          .profile-photo-cell
+          .profile-info-cell.flex-1
+            .nick-name.name-nick 홍주원
+            .email.e-mail juwonhp373@gmail.com
+        .button-grid.flex.align-center
+          .button.flex.align-center.flex-1#loginButton Login
+          .button.flex.align-center#logoutButton Logout
 
 
     .button-zone.flex.height-align-center
@@ -174,22 +153,34 @@ html
         .icon-button-field.flex.align-center(command='users')
           i.fas.fa-users
       .changing-field.flex.height-align-center(type='false')
-        .title-grid Friends
+        .title-grid Followings
 
     .browse-button.flex.align-center.upload-button
       i.fas.fa-plus
     .upload-condition-zone.flex
       .upload-field.flex.flex-1.align-center
-         .description-button-grid.flex.align-center
-            svg
-               rect
-            i.material-icons devices_other
-            .description Drop Files Here
-            .button.flex.align-center.upload-button Browse
+        .description-button-grid.flex.align-center
+          svg
+            rect
+          i.material-icons devices_other
+          .description Drop Files Here
+          .button.flex.align-center.upload-button Browse
 
-      //square
-      .card-part.flex.display-none(type='square')
-
+      //list
+      .card-part.flex(type='square').display-none
+        //.card-cover-cell
+        //  .sights-card-cell
+        //    .sights-photo-div
+        //      .hover-dark-background
+        //      .i.fas.fa-music
+        //    .sights-content-div.flex.align-center
+        //      .content.flex-1
+        //        .text.bold FILE NAME HERE
+        //        .text.desc SOUND / 30KB
+        //      .download-icon
+        //        i.fas.fa-download
+        //    .i.material-icons.delete delete
+      // square
 
       .condition-bar-field(type='false')
         .travellers-part
@@ -197,50 +188,42 @@ html
           //  .photo-div
           //    .travellers-photo
           //  .travellers-name-div.flex-1 Jeremy Shaw
-          //  .radio-box.flex.align-center
-          //    .circle
+          //  .online-div
           //.travellers-cell.flex.align-center
           //  .photo-div
           //    .travellers-photo.kimberly
           //  .travellers-name-div.flex-1 Kimberly Wales
-          //  .radio-box.flex.align-center
-          //    .circle
+          //  .online-div.online
           //.travellers-cell.flex.align-center
           //  .photo-div
           //    .travellers-photo.chi
           //  .travellers-name-div.flex-1 Chi Chow
-          //  .radio-box.flex.align-center
-          //    .circle
+          //  .online-div
           //.travellers-cell.flex.align-center
           //  .photo-div
           //    .travellers-photo.karan
           //  .travellers-name-div.flex-1 Karan Sharma
-          //  .radio-box.flex.align-center
-          //    .circle
+          //  .online-div
           //.travellers-cell.flex.align-center
           //  .photo-div
           //    .travellers-photo.keeri
           //  .travellers-name-div.flex-1 Keeri Pervose
-          //  .radio-box.flex.align-center
-          //    .circle
+          //  .online-div
           //.travellers-cell.flex.align-center
           //  .photo-div
           //    .travellers-photo.katy
           //  .travellers-name-div.flex-1 Katy Gomes
-          //  .radio-box.flex.align-center
-          //    .circle
+          //  .online-div
           //.travellers-cell.flex.align-center
           //  .photo-div
           //    .travellers-photo.jeff
           //  .travellers-name-div.flex-1 Jeff Walton
-          //  .radio-box.flex.align-center
-          //    .circle
+          //  .online-div
           //.travellers-cell.flex.align-center
           //  .photo-div
           //    .travellers-photo.peter
           //  .travellers-name-div.flex-1 Peter John
-          //  .radio-box.flex.align-center
-          //    .circle
+          //  .online-div
+  script(src='/javascripts/20180805/dragDrop.js')
   script(src='/javascripts/20180805/firebase.selector.js')
   script(src="/javascripts/20180805/controller.example.js")
-  script(src='/javascripts/20180805/dragDrop.js')

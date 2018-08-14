@@ -238,13 +238,12 @@ const FirebaseApi = new function () {
   }
   
   
-  async function readFileData() {
+  async function readFileData(id) {
     
-    const user = auth.currentUser;
-    const files = await FirebaseDB.readFile(user.uid);
+    const files = await FirebaseDB.readFile(id);
     console.log(files);
     readListener(files);
-    
+    return files;
   }
   
   return {
